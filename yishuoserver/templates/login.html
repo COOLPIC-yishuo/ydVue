@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
+<link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/skin_/login.css" />
+<script type="text/javascript" src="/static/js/jquery.js"></script>
+<script type="text/javascript" src="/static/js/jquery.select.js"></script>
+<title>蓝色企业数字办公后台管理模板_用户登录</title>
+
+    <script src="../static/js/jQuerynew.js"></script>
+    <script src="../static/js/jquery.validate.min.js"></script>
+<script>
+
+    $().ready(function () {
+		$("#signupForm").validate({
+			rules:{
+			    userName:{
+			        required: true,
+        			minlength: 3
+				},
+				password:{
+			        required: true,
+        			minlength: 3
+				}
+			},
+			messages:{
+				userName:{
+					required: "请输入用户名",
+					minlength: "用户名3位"
+				},
+				password:{
+					required: "请输入密码",
+					minlength: "密码长度不足"
+				}
+			}
+		})
+    })
+</script>
+</head>
+
+<body>
+<form action="/login/" method="post" id="signupForm">
+    <div id="container">
+    <div id="bd">
+    	<div id="main">
+        	<div class="login-box">
+                <div id="logo"></div>
+                <h1></h1>
+                <div class="input username" id="username">
+                    <label for="userName">用户名</label>
+                    <span></span>
+                    <input type="text" id="userName" name="aname"/>
+                </div>
+                <div class="input psw" id="psw">
+                    <label for="password">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+                    <span></span>
+                    <input type="password" id="password" name="apass"/>
+                </div>
+{#                <input type="checkbox" tabindex="3" style="margin-left: 10px" name="save">记住密码#}
+                <div class="input validate" id="validate">
+                    <label for="valiDate">验证码</label>
+                    <input type="text" id="valiDate" />
+                    <div class="value">X3D5</div>
+                </div>
+                <div>
+                    <div style="margin-top: 240px;margin-left: 410px">
+                        <input type="checkbox" name="asave">记住密码
+                    </div>
+                </div>
+                <div id="btn" class="loginButton">
+                    <input type="submit" class="button" value="登录"  />
+                </div>
+            </div>
+        </div>
+        <div id="ft">CopyRight&nbsp;UAIF1805</div>
+    </div>
+
+</div>
+</form>
+
+</body>
+<script type="text/javascript">
+	var height = $(window).height() > 445 ? $(window).height() : 445;
+	$("#container").height(height);
+	var bdheight = ($(window).height() - $('#bd').height()) / 2 - 20;
+	$('#bd').css('padding-top', bdheight);
+	$(window).resize(function(e) {
+        var height = $(window).height() > 445 ? $(window).height() : 445;
+		$("#container").height(height);
+		var bdheight = ($(window).height() - $('#bd').height()) / 2 - 20;
+		$('#bd').css('padding-top', bdheight);
+    });
+	$('select').select();
+
+	$('.loginButton').click(function(e) {
+        document.location.href = "main.html";
+    });
+	var arr=[1,2,3,4,5,6,7,8,9,0,""];
+	var str=""
+	for(var i=0;i<4;i++){
+        var a = arr[Math.floor(Math.random()*10)]
+        str+=a
+    }
+	$(".value").text(str);
+</script>
+
+</html>

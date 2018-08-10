@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container" style="text-align: center;margin-top: 30px">
+        <form action="/messageedit/" method="post">
+            <table class="table table-\bordered">
+                <input type="hidden" name="mid" value="{{ data.mid }}">
+                <input type="text" name="mname" value="{{ data.mname }}" class="form-control" style="background-color: #ffffff">
+                <br>
+                <input type="text" name="mcontent" value="{{ data.mcontent }}" class="form-control" style="background-color: #ffffff">
+                <br>
+                <select name="mcid" class="form-control" placeholder="{{ data.ctext }}" style="background-color: #ffffff">
+                    {% for item in messageInfo %}
+                        <option value="{{ item.cid }}">{{ item.ctext }}</option>
+                    {% endfor %}
+                </select>
+            </table>
+
+            <input type="submit" class="btn btn-default" style="background-color: #ffffff">&nbsp;
+            <input type="reset" class="btn btn-default" style="background-color: #ffffff">
+        </form>
+    </div>
+</body>
+</html>

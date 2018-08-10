@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container" style="text-align: center;margin-top: 30px">
+        <form action="/collectedit/" method="post">
+            <table class="table table-bordered">
+                <input type="hidden" name="coid" value="{{ data.coid }}">
+                <input type="text" name="coname" value="{{ data.coname }}" class="form-control" style="background-color: #ffffff">
+                <br>
+                <select name="cocid" class="form-control" style="background-color: #ffffff">
+                    <option value="">请选择编辑的内容</option>
+                    {% for item in collectInfo %}
+                        <option value="{{ item.ctext }}" placeholder="{{ item.ctext }}">{{ item.ctext }}</option>
+                    {% endfor %}
+                </select>
+            </table>
+
+            <input type="submit" class="btn btn-default" style="background-color: #ffffff">&nbsp;
+            <input type="reset" class="btn btn-default" style="background-color: #ffffff">
+        </form>
+    </div>
+</body>
+</html>

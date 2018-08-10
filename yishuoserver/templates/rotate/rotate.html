@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/static/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container" style="text-align: center;margin-top: 30px">
+        <form action="" method="post">
+        <table class="table table-bordered">
+            <tr>
+                <td>广告地址</td>
+                <td>操作</td>
+            </tr>
+            {% for item in data %}
+                <tr>
+                    <td><img src="{{ item.raddr }}" alt="" style="width: 30px;height: 30px"></td>
+                    <td>
+                        <a href="/rotateedit?rid={{ item.rid }}" class=" glyphicon glyphicon-pencil"></a>&nbsp;
+                        <a href="/rotatedel?rid={{ item.rid }}" class=" glyphicon glyphicon-trash"></a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </form>
+    <a href="/rotateadd" class="btn btn-primary" style="margin: auto;display: block">添加</a>
+    <br>
+    <div style="float: right">{{ page|safe }}</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/skin_/main.css" />
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script src="/static/js/jQuerynew.js"></script>
+    <style>
+        body{
+            font-size: 17px;
+        }
+        .box{
+            width: 100vw;
+            height: 90vh;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .header{
+            width:100%;
+            height: 50px;
+            background-color: #0C88C1;
+            position: fixed;
+            top:0;left:0;
+        }
+        .header_light{
+            width: 100%;
+            height:50px;
+            float: left;
+            color: #FFFFFF;
+            margin-left: 30px;
+            line-height: 50px;
+            font-size: 17px
+        }
+        .lefter{
+            height: 100%;
+            background-color: #F2F2F2;
+            border-bottom: 3px solid #ffffff;
+            position: fixed;
+            top:50px;left:0;
+        }
+        .main1{
+            height: 100%;
+            background-color: #ffffff;
+            border-bottom: 3px solid #ffffff;
+            position: fixed;
+            top:50px;right:0;
+        }
+        .footer{
+            border-top: 1px solid #F2F2F2;
+            width:100%;
+            height: 8%;
+            background-color: #FAFAFA;
+            position: fixed;
+            bottom: 0;left: 0;
+            text-align: center;
+            line-height: 60px;
+            color:#848FD8;
+            font-weight: bold;
+        }
+        ul>li{
+            list-style-type: none;
+        }
+        a{
+            text-decoration: none;
+            color:#000000;
+        }
+        a:hover{
+            text-decoration: none;
+            color:#000000;
+        }
+        .con{
+            display: block;
+            width: 100%;
+            height: 50px;
+            margin-left: 60px;
+
+        }
+        .con :hover{
+            background-color: #0C88C1;
+        }
+        .con1{
+            margin-top: 5px;
+        }
+        .info{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="header">
+        <span  class="header_light"><a href="/header/?aname={{ aname }}" name="header" target="main1 ">
+        </a>欢迎 {{ aname }} 登录后台管理系统
+        <a href="/exit" target="_parent" style="color: #ffffff;float: right;text-decoration: none;display:block;margin-right: 60px; ">退出</a>
+        </span>
+    </div>
+    <div class="row">
+        <div class="lefter col-xs-6 col-sm-2 col-md-2 col-lg-2"><a href="/lefter" name="lefter" target="main1"></a>
+            <p class="" style="height:30px;line-height: 30px;padding-left: 5px;margin-top: 10px;color:#ffffff">
+                <ul>
+                    <li>
+                        <p><a href="/user" target="main1" class="con con1">用户信息设置</a></p>
+                    </li>
+                    <li>
+                        <p><a href="/message" target="main1" class="con">留言管理设置</a></p>
+                    </li>
+                    <li>
+                        <p><a href="/zan" target="main1" class="con">点赞管理设置</a></p>
+                    </li>
+                    <li>
+                        <p><a href="/collect" target="main1" class="con">收藏管理设置</a></p>
+                    </li>
+                    <li>
+                        <p><a href="/share" target="main1" class="con">分享管理设置</a></p>
+                    </li>
+                    <li>
+                        <p><a href="/content" target="main1" class="con">内容管理设置</a></p>
+                    </li>
+                    <li>
+                        <p><a href="/types" target="main1" class="con">分类管理设置</a></p>
+                    </li>
+                    <li>
+                        <p><a href="/rotate" target="main1" class="con">广告管理设置</a></p>
+                    </li>
+                </ul>
+            </p>
+
+        </div>
+        <iframe src="/main1" frameborder="0" name="main1" class="main1 col-xs-6 col-sm-10 col-md-10 col-lg-10"></iframe>
+    </div>
+    <div class="footer">
+        版权所有 &copy; UAIF
+    </div>
+
+</div>
+</body>
+<script>
+    $(".info").click(function () {
+        $(this).next("ul").slideToggle();
+    })
+</script>
+</html>
+
+

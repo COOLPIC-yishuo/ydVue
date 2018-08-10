@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/static/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container" style="text-align: center;margin-top: 30px">
+        <form action="" method="post">
+        <table class="table table-bordered">
+            <tr>
+                <td>分类名</td>
+                <td>分类的唯一标识</td>
+                <td>操作</td>
+            </tr>
+            {% for item in data %}
+                <tr>
+                    <td>{{ item.tname }}</td>
+                    <td>{{ item.ttid }}</td>
+                    <td>
+                        <a href="/typeedit?tid={{ item.tid }}" class=" glyphicon glyphicon-pencil"></a>&nbsp;
+                        <a href="/typedel?tid={{ item.tid }}" class=" glyphicon glyphicon-trash"></a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </form>
+    <a href="/typeadd" class="btn btn-primary" style="margin: auto;display: block">添加</a>
+    <br>
+    <div style="float: right">{{ page|safe }}</div>
+    </div>
+</body>
+</html>
